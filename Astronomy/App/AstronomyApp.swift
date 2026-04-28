@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct AstronomyApp: App {
+    @State private var router = AppRouter()
+    @State private var container = AppContainer()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(router)
+                .environment(container)
         }
     }
 }
