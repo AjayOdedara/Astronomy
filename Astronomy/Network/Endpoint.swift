@@ -11,7 +11,7 @@ enum HTTPMethod: String {
 
 public enum Config {
     public static let planetary: String = "https://api.nasa.gov/planetary/"
-    public static let nasaAPIKey: String = "6EYiYnK3ppO8yI3UryoMuY6lvw5bWTLCPaG8dB8j"
+    public static let nasaAPIKey: String = "DEMO_KEY"
 }
 
 protocol Endpoint {
