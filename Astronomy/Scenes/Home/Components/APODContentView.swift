@@ -16,7 +16,7 @@ struct APODContentView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 mediaView
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: 380)
                     .clipped()
 
                 VStack(alignment: .leading, spacing: 12) {
@@ -54,7 +54,6 @@ struct APODContentView: View {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(16/9, contentMode: .fit)
-                        .frame(maxWidth: .infinity, maxHeight: 380)
                         .accessibilityLabel(entry.title)
                 case .failure:
                     Image(systemName: "photo.slash")
@@ -68,6 +67,7 @@ struct APODContentView: View {
         case .video:
             if let url = URL(string: entry.url) {
                 APODVideoView(url: url)
+                    .aspectRatio(16/9, contentMode: .fit)
                     .accessibilityLabel("Video: \(entry.title)")
             } else {
                 Text("Video unavailable")
