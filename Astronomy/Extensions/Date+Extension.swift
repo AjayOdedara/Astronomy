@@ -8,7 +8,8 @@
 import Foundation
 
 extension Date {
-    var apodString: String {
-        formatted(.iso8601.year().month().day())
+    var localDateString: String {
+        let style = Date.ISO8601FormatStyle(timeZone: .current)
+        return formatted(style.year().month().day())
     }
 }

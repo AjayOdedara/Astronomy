@@ -17,7 +17,7 @@ enum APODQuery: Equatable {
         case .today:
             break
         case .single(let date):
-            params["date"] = date.apodString
+            params["date"] = date.localDateString
         }
         return params
     }
