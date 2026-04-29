@@ -98,5 +98,8 @@ When list support is added (e.g. date range queries), switching to `.perKey` mod
 ### Retry Strategy
 Retry is currently manual — the user taps a button to re-trigger the last query. In production this would be complemented with automatic exponential backoff with jitter to handle transient network failures gracefully without hammering the server.
 
+### Design System
+UI components are built inline for this submission. At scale, shared components (typography, colours, spacing, buttons) would be extracted into a dedicated design system module aligned with the design team's Figma library — ensuring consistency across features and making design updates a single-point change.
+
 ### Localisation
 All user-facing strings are currently hardcoded in English. The app has no `Localizable.strings` or `String Catalogue` in place. Adding localisation support is a straightforward next step given strings are already centralised in the accessibility and error layers.
